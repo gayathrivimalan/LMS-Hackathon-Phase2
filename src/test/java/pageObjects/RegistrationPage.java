@@ -175,6 +175,7 @@ public class RegistrationPage extends BaseClass{
 		if(RGControl.equals(RegFormControls.FirstName))
 		{
 			inputFirstName.sendKeys(value);
+			
 		}
 		else if(RGControl.equals(RegFormControls.LastName))
 		{
@@ -333,5 +334,8 @@ public class RegistrationPage extends BaseClass{
 	public String getSuccessfulSignUpMsg() {
 		 return divSuccessSignUpMsg.getText();		
 	}
-	
+	public void clearElement(RegFormControls phonenumber)
+	{
+	//	phonenumber.clear();
+	}
 }

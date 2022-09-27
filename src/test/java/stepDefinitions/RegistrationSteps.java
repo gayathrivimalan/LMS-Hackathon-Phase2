@@ -62,6 +62,7 @@ public class RegistrationSteps extends BaseClass{
 	@When("User fills the First Name in Alphabets only")
 	public void user_fills_the_first_name_in_alphabets_only() {
 		registrationPage.setRegFormControlValues(RegFormControls.FirstName, "FirstName One");
+	
 	}
 	
 	@Then("The First Name will be displayed")
@@ -145,6 +146,7 @@ public class RegistrationSteps extends BaseClass{
 	public void the_mobile_number_will_be_displayed() {
 		String phnoDisplay = registrationPage.getRegFormControlValues(RegFormControls.PhoneNumber);
 		 Assert.assertEquals(phnoDisplay,"5033334444"); 
+		 registrationPage.clearElement(RegFormControls.PhoneNumber);
 	}
 	
 	@When("User Selects the Date of Birth from the Calender")
