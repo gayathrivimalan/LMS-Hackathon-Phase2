@@ -158,7 +158,7 @@ public class RegistrationPage extends BaseClass{
 	public void ClickBtnLogin() {
 		btnLogin.click();
 	}
-	public Boolean HeaderLoginPage() {
+	public Boolean isLoginPageHeaderVisible() {
 		return headerLoginPage.isDisplayed();
 	}
 	
@@ -172,56 +172,62 @@ public class RegistrationPage extends BaseClass{
 	
 	public void setRegFormControlValues(RegFormControls RGControl,String value) {
 		
-		if(RGControl.equals(RegFormControls.FirstName))
-		{
-			inputFirstName.sendKeys(value);
-			
+		try {
+			if(RGControl.equals(RegFormControls.FirstName))
+			{
+				inputFirstName.sendKeys(value);
+				
+				
+			}
+			else if(RGControl.equals(RegFormControls.LastName))
+			{
+				 inputLastName.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.Address))
+			{
+				inputAddress.sendKeys(value);
+			}	
+			else if(RGControl.equals(RegFormControls.StreetName))
+			{
+				inputStreetName.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.City))
+			{
+				inputCity.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.Zip))
+			{
+				inputZip.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.PhoneNumber))
+			{
+				inputPhoneNumber.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.UserName))
+			{
+				inputUserName.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.Password))
+			{
+				inputPassword.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.Email))
+			{
+				inputEmail.sendKeys(value);
+			}
+			else if(RGControl.equals(RegFormControls.State))
+			{
+				Select drpState = new Select(selectState);
+				drpState.selectByVisibleText(value);
+			}
+			else if(RGControl.equals(RegFormControls.Birthdate))
+			{
+				inputBirthDate.sendKeys(value);
+			}		
 		}
-		else if(RGControl.equals(RegFormControls.LastName))
-		{
-			 inputLastName.sendKeys(value);
+		catch(Exception ex) {
+			System.out.println(RGControl.toString() + " control is not implemented yet");
 		}
-		else if(RGControl.equals(RegFormControls.Address))
-		{
-			inputAddress.sendKeys(value);
-		}	
-		else if(RGControl.equals(RegFormControls.StreetName))
-		{
-			inputStreetName.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.City))
-		{
-			inputCity.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.Zip))
-		{
-			inputZip.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.PhoneNumber))
-		{
-			inputPhoneNumber.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.UserName))
-		{
-			inputUserName.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.Password))
-		{
-			inputPassword.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.Email))
-		{
-			inputEmail.sendKeys(value);
-		}
-		else if(RGControl.equals(RegFormControls.State))
-		{
-			Select drpState = new Select(selectState);
-			drpState.selectByVisibleText(value);
-		}
-		else if(RGControl.equals(RegFormControls.Birthdate))
-		{
-			inputBirthDate.sendKeys(value);
-		}		
 	}
 	
 	public String getRegFormControlValues(RegFormControls RGControl) {
@@ -334,8 +340,5 @@ public class RegistrationPage extends BaseClass{
 	public String getSuccessfulSignUpMsg() {
 		 return divSuccessSignUpMsg.getText();		
 	}
-	public void clearElement(RegFormControls phonenumber)
-	{
-	//	phonenumber.clear();
-	}
+	
 }

@@ -2,6 +2,7 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
@@ -23,12 +24,37 @@ public class LoginPage extends BaseClass{
 
 	@FindBy(xpath = "//input[@id='password']")
 	public WebElement Password;
+	
+	
+	@FindBy(xpath="//input[@id ='username']")
+	@CacheLookup
+	static WebElement inputUname;
+	
+	@FindBy(xpath ="//input[@id ='password']")
+	@CacheLookup
+	static WebElement inputPwd;
 
 	@FindBy(xpath = "//span[@class='mat-button-wrapper']")
 	public WebElement LoginBn;
 	
 	@FindBy(xpath="//form//mat-error[@id='errormessage']")
 	public WebElement ErrMsg;
+	
+	public static void SetUName(String uName) {
+		inputUname.clear();
+		inputUname.sendKeys(uName);
+	}
+	
+	public void SetPassword(String pwd) {
+		inputPwd.clear();
+		inputPwd.sendKeys(pwd);
+	}
+	
+	public static void SetPwd(String pwd) {
+		inputPwd.clear();
+		inputPwd.sendKeys(pwd);
+	}
+
 
 	public void checkTitle() {
 		String title = Helper.getTitle();

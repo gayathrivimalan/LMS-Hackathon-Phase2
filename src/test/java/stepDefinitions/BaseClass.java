@@ -1,18 +1,20 @@
 package stepDefinitions;
 
+import pageObjects.AssignmentPage;
+import pageObjects.Batch;
 import pageObjects.HeaderPage;
 import pageObjects.HomePage;
 import pageObjects.LoginPage;
-import pageObjects.LoginPage2;
+import pageObjects.LoginPageAlt;
 import pageObjects.RegistrationPage;
 
 public class BaseClass {
 	
-	public LoginPage2 loginPage;
 	public HomePage homePage;
 	public HeaderPage headerPage;
 	public RegistrationPage registrationPage;
-	public LoginPage lp;
-	
-	
+	public LoginPage loginPage;	
+	public AssignmentPage assignmentPage;
+	public LoginPageAlt  loginPageAlt;
+	public Batch bat;
 }

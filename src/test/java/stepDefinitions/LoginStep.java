@@ -11,32 +11,27 @@ import utilities.UserLogin;
 public class LoginStep extends BaseClass{
 	@Given("User is on the browser")
 	public void user_is_on_the_browser() {
-		lp = new LoginPage(Helper.getDriver());
+		loginPage = new LoginPage(Helper.getDriver());
 	}
 
 	@When("User opens the LMS Website {string}")
-	public void user_opens_the_lms_website(String url) throws InterruptedException {
-//		Helper.openPage(lp.url);
+	public void user_opens_the_lms_website(String url){
 		 Helper.openPage(url);
-		 Thread.sleep(5000);
+		 
 	}
 
 	@Then("User should see the Login page")
-	public void user_should_see_the_login_page() throws InterruptedException {
-		lp.checkTitle();
-		 Thread.sleep(5000);
+	public void user_should_see_the_login_page()  {
+		loginPage.checkTitle();
+		
 	}
 
 	@Given("User is on the Login Page")
 	public void user_is_on_the_login_page() {
-		lp = new LoginPage(Helper.getDriver());
-		// Helper.openPage(url);
-		// Thread.sleep(5000);
-		//lp.checkHomePageTitle();
-		lp.checkTitle();
+		loginPage.checkTitle();
 	}
 
-	@Then("User fills the form from the given sheetName\"Data\"")
+	@When("User fills the form from the given sheetName\"Data\"")
 	public void user_fills_the_form_from_the_given_sheet_name_data() throws InterruptedException {
 		UserLogin ul = new UserLogin();
 		try {
@@ -65,21 +60,20 @@ public class LoginStep extends BaseClass{
 					System.out.println("User Name: " + username);
 					System.out.println("Password: " + password);
 					Helper.getDriver().navigate().refresh();
-					lp.enterUserName(username);
-					lp.enterPassword(password);
-					Thread.sleep(7000);
-					lp.clickLogin();
+					loginPage.enterUserName(username);
+					loginPage.enterPassword(password);
+					loginPage.clickLogin();
 				}
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
 	}
+
 
 	@Then("User should see the LMS Home page")
 	public void user_should_see_the_lms_home_page() {
-		lp.checkHomePageTitle();
+		loginPage.checkHomePageTitle();
 	}
 
 
