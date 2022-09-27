@@ -10,9 +10,9 @@ import org.openqa.selenium.support.PageFactory;
 import stepDefinitions.BaseClass;
 import utilities.Helper;
 
-public class LoginPage2 extends BaseClass {
+public class LoginPageAlt extends BaseClass {
 	
-	public LoginPage2 (WebDriver webDriver)
+	public LoginPageAlt (WebDriver webDriver)
 	{
 		PageFactory.initElements(webDriver, this);
 	}

@@ -1,4 +1,4 @@
-Feature: Login
+Feature: LoginAlt
 
 Background: The User opens login Page
 	Given User Launches Chrome Browser

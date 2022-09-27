@@ -1,18 +1,17 @@
 package stepDefinitions;
 
-
 import org.junit.Assert;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pageObjects.LoginPage2;
+import pageObjects.LoginPageAlt;
 import utilities.Helper;
 
-public class LoginSteps extends BaseClass {
+public class LoginStepsAlt extends BaseClass {
 	
 	@Given("User Launches Chrome Browser")
 	public void user_launches_chrome_browser() {
-		 loginPage = new LoginPage2(Helper.getDriver());		 
+		loginPageAlt = new LoginPageAlt(Helper.getDriver());		 
 	}
 
 	@When("user opens LMS  portal link {string}")
@@ -29,8 +28,8 @@ public class LoginSteps extends BaseClass {
 	@When("User enters Username as {string} and Password as {string}")
 	public void user_enters_username_as_and_password_as(String userName, String password) {
 	   
-		loginPage.SetUserName(userName);
-		loginPage.SetPassword(password);	
+		loginPageAlt.SetUserName(userName);
+		loginPageAlt.SetPassword(password);	
 		
 		System.out.println("User Name: "+ userName);
 		System.out.println("Password: "+ password);
@@ -38,12 +37,12 @@ public class LoginSteps extends BaseClass {
 
 	@Then("User clicks on Login button with expected status as {string}")
 	public void user_clicks_on_login_button(String expectedStatus) {
-		loginPage.ClickBtnLogin();
+		loginPageAlt.ClickBtnLogin();
 		
 		if (expectedStatus == "Both Fail")
 		{
-			String userNameValMessage = loginPage.getErrMsgUN();
-			String pwdValMessage= loginPage.getErrMsgPWD();
+			String userNameValMessage = loginPageAlt.getErrMsgUN();
+			String pwdValMessage= loginPageAlt.getErrMsgPWD();
 			
 			Assert.assertEquals("Please enter your user name", userNameValMessage);
 			Assert.assertEquals("Please enter your password", pwdValMessage);
@@ -51,18 +50,18 @@ public class LoginSteps extends BaseClass {
 		}
 		else if (expectedStatus == "Missing Password")
 		{
-			String commonMsg =loginPage.getErrMsgCommon();
+			String commonMsg =loginPageAlt.getErrMsgCommon();
 			Assert.assertEquals("Invalid username and password Please try again",commonMsg);
 			return;
 		}
 		else if (expectedStatus =="Please enter your user name")
 		{
-			String ErrMsgwithoutUN = loginPage.getErrMsgWithoutUN();
+			String ErrMsgwithoutUN = loginPageAlt.getErrMsgWithoutUN();
 			Assert.assertEquals("Please enter your user name",ErrMsgwithoutUN);
 			return;
 		}
 		
-		String loginStatusMessage = loginPage.GetLoginStatusMessage();
+		String loginStatusMessage = loginPageAlt.GetLoginStatusMessage();
 		
 		if (loginStatusMessage == null || loginStatusMessage.isEmpty())
 		{
@@ -77,7 +76,8 @@ public class LoginSteps extends BaseClass {
 		
 		if (status == "Pass")
 		{
-			Assert.assertEquals(loginPage.getHomePgTitle(), "Manage Program");
+			Assert.assertEquals(loginPageAlt.getHomePgTitle(), "Manage Program");
 		}
 	}
 }
+
