@@ -36,10 +36,10 @@ public class batchsteps extends BaseClass{
 		bat.onbatchpage();
 	}
 
-	@Then("Verify that the Delete button next to the search box is Disabled")
-	public void verify_that_the_delete_button_next_to_the_search_box_is_disabled() {
-	    bat.DeleteDisabled();
-	}
+//	@Then("Verify that the Delete button next to the search box is Disabled")
+//	public void verify_that_the_delete_button_next_to_the_search_box_is_disabled() {
+//	    bat.DeleteDisabled();
+//	}
 //	@Given("User is on the LMS Homes page")
 //	public void user_is_on_the_lms_homes_page() {
 //		bat=new Batch(Helper.getDriver());

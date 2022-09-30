@@ -12,7 +12,7 @@ Scenario:
 	Then User should see the text as Showing one to three of three entries below the table
 	Then User should see the footer as In total there are three assignements
 
-Scenario:
+Scenario: 
 Given User is on Assignment page
 Then Text box used for search has text as Search
 When User clicks on search with sql into search box
@@ -29,7 +29,7 @@ When User edits Due Date and click save
 Then User can see updated Due Date
 When User clicks Cancel button
 Then User can see Assignment Details form disappears
-When User clicks Save button
+When User clicks Save button in Assignment Page
 Then User can see Successful Assignment Updated message
 
 Scenario:
@@ -81,19 +81,19 @@ Then User can see need to fill required fields
 When User enter reguired details and submit
 Then User can see Submit Assignment Sucessfully
 
-Scenario: 
-Given Users are on Assignment Page
-When User clicks on the Ascending down arrow near to the Assignment name 
-Then User can see the results in Ascending order of Assignment name
-When User clicks onthe Ascending down arrow near to the Assignment Description 
-Then User can see the results in Ascending order of Assignment Description
+#Scenario: 
+#Given Users are on Assignment Page
+#When User clicks on the Ascending down arrow near to the Assignment name 
+#Then User can see the results in Ascending order of Assignment name
+#When User clicks onthe Ascending down arrow near to the Assignment Description 
+#Then User can see the results in Ascending order of Assignment Description
 
-Scenario: 
-Given Users are currently on Assignment Page
-When User clicks onthe Descending arrow down near to the Assignment name
-Then User can see the results in Descending order of Assignment name
-When User clicks onthe Descending arrow down near to the Assignment Description
-Then User can see the results in Descending order of Assignment Description
+#Scenario: 
+#Given Users are currently on Assignment Page
+#When User clicks onthe Descending arrow down near to the Assignment name
+#Then User can see the results in Descending order of Assignment name
+#When User clicks onthe Descending arrow down near to the Assignment Description
+#Then User can see the results in Descending order of Assignment Description
 
 
 

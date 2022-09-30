@@ -2,13 +2,14 @@ package pageObjects;
 
 import java.time.Duration;
 
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 import stepDefinitions.BaseClass;
 import utilities.Helper;
 
@@ -375,35 +376,43 @@ public class AssignmentPage extends BaseClass {
 
 	public void clickAssignmentAscendingOrder() {
 
+		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		Header_AssignmentName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr//th[@psortablecolumn='assignmentName']")));
 		Header_AssignmentName.click();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 
 	}
 
 	public void clickAssignmentDescriptionAscendingOrder() {
 
+		
+		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		Header_AssignmentDescription = wait.until(ExpectedConditions.elementToBeClickable(Header_AssignmentDescription));
 		Header_AssignmentDescription.click();
-		try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Thread.sleep(1000);
+//		} catch (InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 	public void clickAssignmentDescendingOrder() {
 
+		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		Header_AssignmentName = wait.until(ExpectedConditions.elementToBeClickable(Header_AssignmentName));
 		Header_AssignmentName.click();
 
 	}
 
 	public void clickAssignmentDescriptionDescendingOrder() {
-
+		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		Header_AssignmentDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr//th[@psortablecolumn='assignmentDescription']")));
 		Header_AssignmentDescription.click();
 
 	}
