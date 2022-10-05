@@ -22,13 +22,13 @@ public class UserIdPageobject {
 	@FindBy(xpath = "//span[text()='Cancel']")
 	@CacheLookup
 	WebElement Cancelbutton;
-	@FindBy(xpath = "/html/body/app-root/app-user/div/p-dialog[2]/div/div/div[3]/button/span[1]")
+	@FindBy(xpath = "//span[text()='Cancel']")
 	@CacheLookup
 	WebElement Cancelbutton1;
-	@FindBy(xpath = "//div[@class='p-dialog-footer ng-tns-c132-7 ng-star-inserted']/button")
+	@FindBy(xpath = "//span[text()='Cancel']")
 	@CacheLookup
 	WebElement Cancelbutton2;
-	@FindBy(xpath = "//button[@type='button']//span[@class='p-dialog-header-close-icon ng-tns-c132-7 pi pi-times']")
+	@FindBy(xpath = "//span[text()='Cancel']")
 	@CacheLookup
 	WebElement Cancelbutton3;
 

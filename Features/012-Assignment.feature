@@ -5,14 +5,14 @@ Background: The User opens login Page
 	When  user opens LMS  portal link "https://lms-frontend-phase2.herokuapp.com/login"
 	When  User enters Username and Password 
     Then  User clicks on Login button with expected status as "<status>"
-Scenario: 
+Scenario: Validate the footer
 	Given User is logged on to LMS website
 	When User clicks Assignment in header
 	Then User should see a heading with text Manage Assignment on the page
 	Then User should see the text as Showing one to three of three entries below the table
 	Then User should see the footer as In total there are three assignements
 
-Scenario: 
+Scenario: Edit Assignment Details
 Given User is on Assignment page
 Then Text box used for search has text as Search
 When User clicks on search with sql into search box
@@ -32,7 +32,7 @@ Then User can see Assignment Details form disappears
 When User clicks Save button in Assignment Page
 Then User can see Successful Assignment Updated message
 
-Scenario:
+Scenario: Delete Assignment
 Given User currently on Assignment page
 When User clicks on Delete button after selecting an assignment
 Then User lands on Confirm Deletion form
@@ -41,7 +41,7 @@ Then User can see Successful Assignment Deleted message
 When User clicks No button
 Then User can see Confirm Deletion form disappears
 
-Scenario: 
+Scenario: Multiple Assignment Deletion
 Given User present on Assignment page
 When User selects more than one Assignment using checkbox
 Then Assignments get selected
@@ -55,7 +55,7 @@ Given User see Confirm Deletion form
 When User clicks No button on Delete Form
 Then User can see Confirm Deletion form gets closed
 
-Scenario:
+Scenario: Add New Assignment
 Given User stays on Assignment page
 When User clicks A New Assignment button
 Then user can see Assignment details form
@@ -74,28 +74,26 @@ Then User gets message Successful assignment created
 When User now clicks Cancel button
 Then User can now see assignment Details form disappears
 
-Scenario:
+Scenario: Fill Assignment
 Given User on Assignment Page
 When User Click on Submit
 Then User can see need to fill required fields
 When User enter reguired details and submit
 Then User can see Submit Assignment Sucessfully
 
-#Scenario: 
-#Given Users are on Assignment Page
-#When User clicks on the Ascending down arrow near to the Assignment name 
-#Then User can see the results in Ascending order of Assignment name
-#When User clicks onthe Ascending down arrow near to the Assignment Description 
-#Then User can see the results in Ascending order of Assignment Description
+Scenario: Results in Ascending order
+Given Users are on Assignment Page
+When User clicks on the Ascending down arrow near to the Assignment name 
+Then User can see the results in Ascending order of Assignment name
+When User clicks onthe Ascending down arrow near to the Assignment Description 
+Then User can see the results in Ascending order of Assignment Description
 
-#Scenario: 
-#Given Users are currently on Assignment Page
-#When User clicks onthe Descending arrow down near to the Assignment name
-#Then User can see the results in Descending order of Assignment name
-#When User clicks onthe Descending arrow down near to the Assignment Description
-#Then User can see the results in Descending order of Assignment Description
-
-
+Scenario: Results in Descending order
+Given Users are currently on Assignment Page
+When User clicks onthe Descending arrow down near to the Assignment name
+Then User can see the results in Descending order of Assignment name
+When User clicks onthe Descending arrow down near to the Assignment Description
+Then User can see the results in Descending order of Assignment Description
 
 
 

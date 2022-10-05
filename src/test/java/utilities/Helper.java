@@ -1,6 +1,6 @@
 package utilities;
 
-import java.time.Duration;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,15 +10,15 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class Helper {
 	private static Helper Helper;    
-    private static WebDriver driver;
+    private static WebDriver driver ;
     public final static int TIMEOUT = 2;
      
      private Helper() {
           
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        new WebDriverWait(driver, Duration.ofSeconds(TIMEOUT));
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
+        new WebDriverWait(driver,2);
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         driver.manage().window().maximize();
      }      
              

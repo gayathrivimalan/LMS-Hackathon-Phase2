@@ -124,13 +124,17 @@ public class AssignmentStepDefinition extends BaseClass {
 		assignmentPage.checkManageAssignmentHeader();
 	}
 
-	@When("User clicks Save button")
-	public void user_clicks_save_button() {
+	@When("User clicks Save button in Assignment Page")
+	public void user_clicks_save_button_in_Assignment_Page() throws InterruptedException {
 		assignmentPage.isElementVisible(assignmentPage.EditIcon, Duration.ofSeconds(5));
 		assignmentPage.ClickEditIcon();
+		Thread.sleep(1000);
 		assignmentPage.isElementVisible(assignmentPage.SaveButton, Duration.ofSeconds(5));
 		assignmentPage.ClickSaveButton();
+		Thread.sleep(1000);
 		assignmentPage.isElementVisible(assignmentPage.SuccessMSg, Duration.ofSeconds(10));
+		Thread.sleep(1000);
+		
 	}
 
 	@Then("User can see Successful Assignment Updated message")
@@ -361,68 +365,68 @@ public class AssignmentStepDefinition extends BaseClass {
 		assignmentPage.checkManageAssignmentHeader();
 	}
 
-//	@When("User clicks on the Ascending down arrow near to the Assignment name")
-//	public void user_clicks_on_the_ascending_down_arrow_near_to_the_assignment_name() {
-//		assignmentPage.clickAssignmentAscendingOrder();
-//	}
-//
-//	@Then("User can see the results in Ascending order of Assignment name")
-//	public void user_can_see_the_results_in_ascending_order_of_assignment_name() {
-//		assignmentPage.clickAssignmentAscendingOrder();
-//	}
-//
-//	@When("User clicks onthe Ascending down arrow near to the Assignment Description")
-//	public void user_clicks_onthe_ascending_down_arrow_near_to_the_assignment_description() {
-//		assignmentPage.clickAssignmentDescriptionAscendingOrder();
-//	}
-//
-//	@Then("User can see the results in Ascending order of Assignment Description")
-//	public void user_can_see_the_results_in_ascending_order_of_assignment_description() {
-//		assignmentPage.clickAssignmentDescriptionAscendingOrder();
-//	}
-//
-//	@Given("Users are currently on Assignment Page")
-//	public void users_are_currently_on_assignment_page() {
-//		assignmentPage = new AssignmentPage(Helper.getDriver());
-//		assignmentPage.clickAssignementHeader();
-//		assignmentPage.checkManageAssignmentHeader();
-//	}
-//
-//	@When("User clicks onthe Descending arrow down near to the Assignment name")
-//	public void user_clicks_onthe_descending_arrow_down_near_to_the_assignment_name() {
-//		try {
-//		assignmentPage.clickAssignmentDescendingOrder();
-//		}catch(Exception ex){
-//			ex.printStackTrace();
-//		}
-//	}
-//
-//	@Then("User can see the results in Descending order of Assignment name")
-//	public void user_can_see_the_results_in_descending_order_of_assignment_name() {
-//		try {
-//			assignmentPage.clickAssignmentDescendingOrder();
-//			}catch(Exception ex){
-//				ex.printStackTrace();
-//			}
-//		
-//	}
-//
-//	@When("User clicks onthe Descending arrow down near to the Assignment Description")
-//	public void user_clicks_onthe_descending_arrow_down_near_to_the_assignment_description() {
-//		
-//		try {
-//			assignmentPage.clickAssignmentDescriptionDescendingOrder();
-//			}catch(Exception ex){
-//				ex.printStackTrace();
-//			}
-//	}
-//
-//	@Then("User can see the results in Descending order of Assignment Description")
-//	public void user_can_see_the_results_in_descending_order_of_assignment_description(){
-//		try {
-//			assignmentPage.clickAssignmentDescriptionDescendingOrder();
-//			}catch(Exception ex){
-//				System.out.println(ex);
-//			}		
-//	}
+	@When("User clicks on the Ascending down arrow near to the Assignment name")
+	public void user_clicks_on_the_ascending_down_arrow_near_to_the_assignment_name() {
+		assignmentPage.clickAssignmentAscendingOrder();
+	}
+
+	@Then("User can see the results in Ascending order of Assignment name")
+	public void user_can_see_the_results_in_ascending_order_of_assignment_name() {
+		assignmentPage.clickAssignmentAscendingOrder();
+	}
+
+	@When("User clicks onthe Ascending down arrow near to the Assignment Description")
+	public void user_clicks_onthe_ascending_down_arrow_near_to_the_assignment_description() {
+		assignmentPage.clickAssignmentDescriptionAscendingOrder();
+	}
+
+	@Then("User can see the results in Ascending order of Assignment Description")
+	public void user_can_see_the_results_in_ascending_order_of_assignment_description() {
+		assignmentPage.clickAssignmentDescriptionAscendingOrder();
+	}
+
+	@Given("Users are currently on Assignment Page")
+	public void users_are_currently_on_assignment_page() {
+		assignmentPage = new AssignmentPage(Helper.getDriver());
+		assignmentPage.clickAssignementHeader();
+		assignmentPage.checkManageAssignmentHeader();
+	}
+
+	@When("User clicks onthe Descending arrow down near to the Assignment name")
+	public void user_clicks_onthe_descending_arrow_down_near_to_the_assignment_name() {
+		try {
+		assignmentPage.clickAssignmentDescendingOrder();
+		}catch(Exception ex){
+			ex.printStackTrace();
+		}
+	}
+
+	@Then("User can see the results in Descending order of Assignment name")
+	public void user_can_see_the_results_in_descending_order_of_assignment_name() {
+		try {
+			assignmentPage.clickAssignmentDescendingOrder();
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+		
+	}
+
+	@When("User clicks onthe Descending arrow down near to the Assignment Description")
+	public void user_clicks_onthe_descending_arrow_down_near_to_the_assignment_description() {
+		
+		try {
+			assignmentPage.clickAssignmentDescriptionDescendingOrder();
+			}catch(Exception ex){
+				ex.printStackTrace();
+			}
+	}
+
+	@Then("User can see the results in Descending order of Assignment Description")
+	public void user_can_see_the_results_in_descending_order_of_assignment_description(){
+		try {
+			assignmentPage.clickAssignmentDescriptionDescendingOrder();
+			}catch(Exception ex){
+				System.out.println(ex);
+			}		
+	}
 }

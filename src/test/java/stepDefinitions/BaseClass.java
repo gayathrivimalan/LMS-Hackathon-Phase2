@@ -7,6 +7,7 @@ import pageObjects.HomePage;
 import pageObjects.LoginPage;
 import pageObjects.LoginPageAlt;
 import pageObjects.RegistrationPage;
+import pageObjects.programpage;
 
 public class BaseClass {
 	
@@ -17,4 +18,5 @@ public class BaseClass {
 	public AssignmentPage assignmentPage;
 	public LoginPageAlt  loginPageAlt;
 	public Batch bat;
+	public programpage program;
 }

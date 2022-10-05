@@ -9,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stepDefinitions.BaseClass;
 import utilities.Helper;
@@ -342,7 +343,8 @@ public class AssignmentPage extends BaseClass {
 
 	public boolean isElementVisible(WebElement webElement, Duration timeout) {
 		try {
-			WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+			FluentWait<WebDriver> wait = null;
+			//WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.visibilityOf(webElement));
 			return true;
 		} catch (org.openqa.selenium.NoSuchElementException e) {
@@ -376,7 +378,8 @@ public class AssignmentPage extends BaseClass {
 
 	public void clickAssignmentAscendingOrder() {
 
-		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		FluentWait<WebDriver> wait = null;
+		//WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
 		Header_AssignmentName = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr//th[@psortablecolumn='assignmentName']")));
 		Header_AssignmentName.click();
 //		try {
@@ -391,7 +394,8 @@ public class AssignmentPage extends BaseClass {
 	public void clickAssignmentDescriptionAscendingOrder() {
 
 		
-		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		FluentWait<WebDriver> wait = null;
+		//WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
 		Header_AssignmentDescription = wait.until(ExpectedConditions.elementToBeClickable(Header_AssignmentDescription));
 		Header_AssignmentDescription.click();
 //		try {
@@ -404,14 +408,16 @@ public class AssignmentPage extends BaseClass {
 
 	public void clickAssignmentDescendingOrder() {
 
-		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		FluentWait<WebDriver> wait = null;
+		//WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
 		Header_AssignmentName = wait.until(ExpectedConditions.elementToBeClickable(Header_AssignmentName));
 		Header_AssignmentName.click();
 
 	}
 
 	public void clickAssignmentDescriptionDescendingOrder() {
-		WebDriverWait wait = new WebDriverWait(Helper.getDriver(), Duration.ofSeconds(10));
+		
+		FluentWait<WebDriver> wait = null;
 		Header_AssignmentDescription = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//tr//th[@psortablecolumn='assignmentDescription']")));
 		Header_AssignmentDescription.click();
 
